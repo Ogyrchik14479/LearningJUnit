@@ -1,9 +1,7 @@
 package igor.reznikov.LearnJUnit.entities;
 
-import igor.reznikov.LearnJUnit.enums.FormOfEducationEnum;
+import java.sql.Date;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Type;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Getter
@@ -20,16 +19,16 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-public class Education extends AbstractPersistable<Long> {
+public class WorkExperience extends AbstractPersistable<Long> {
 
-    String institution;
+    String organization;
 
-    String faculty;
+    String position;
 
-    String specialization;
+    Date startOfWork;
 
-    @Enumerated(EnumType.STRING)
-    FormOfEducationEnum formOfEducationEnum;
+    Date endOfWork;
 
-    Integer yearOfGraduation;
+    @Type(type = "org.hibernate.type.TextType")
+    String jobResponsibilitiesAndAchievements;
 }
