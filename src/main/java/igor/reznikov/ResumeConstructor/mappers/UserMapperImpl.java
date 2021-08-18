@@ -1,7 +1,7 @@
-package igor.reznikov.LearnJUnit.mappers;
+package igor.reznikov.ResumeConstructor.mappers;
 
-import igor.reznikov.LearnJUnit.dtos.UserDto;
-import igor.reznikov.LearnJUnit.entities.User;
+import igor.reznikov.ResumeConstructor.dtos.UserDto;
+import igor.reznikov.ResumeConstructor.entities.User;
 
 public class UserMapperImpl implements UserMapper{
     @Override

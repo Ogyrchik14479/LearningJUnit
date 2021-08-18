@@ -1,10 +1,10 @@
-package igor.reznikov.LearnJUnit;
+package igor.reznikov.ResumeConstructor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LearnJUnitApplicationTests {
+class ResumeConstructorApplicationTests {
 
 	@Test
 	void contextLoads() {

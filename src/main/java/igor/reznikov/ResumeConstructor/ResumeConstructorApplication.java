@@ -1,13 +1,13 @@
-package igor.reznikov.LearnJUnit;
+package igor.reznikov.ResumeConstructor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LearnJUnitApplication {
+public class ResumeConstructorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LearnJUnitApplication.class, args);
+		SpringApplication.run(ResumeConstructorApplication.class, args);
 	}
 
 }

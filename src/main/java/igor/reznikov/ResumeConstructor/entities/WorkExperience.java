@@ -1,4 +1,4 @@
-package igor.reznikov.LearnJUnit.entities;
+package igor.reznikov.ResumeConstructor.entities;
 
 import java.sql.Date;
 import javax.persistence.Entity;

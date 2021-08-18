@@ -1,9 +1,11 @@
-package igor.reznikov.LearnJUnit.entities;
+package igor.reznikov.ResumeConstructor.entities;
 
-import igor.reznikov.LearnJUnit.enums.FormOfEducationEnum;
+import igor.reznikov.ResumeConstructor.enums.GenderEnum;
+import igor.reznikov.ResumeConstructor.enums.MaritalStatusEnum;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,16 +22,23 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-public class Education extends AbstractPersistable<Long> {
+@Table(name = "\"user\"")
+public class User extends AbstractPersistable<Long> {
 
-    String institution;
+    String name;
 
-    String faculty;
+    String surname;
 
-    String specialization;
+    String patronymic;
 
     @Enumerated(EnumType.STRING)
-    FormOfEducationEnum formOfEducationEnum;
+    GenderEnum genderEnum;
 
-    Integer yearOfGraduation;
+    @Enumerated(EnumType.STRING)
+    MaritalStatusEnum maritalStatusEnum;
+
+    String telephoneNumber;
+
+    String email;
+
 }

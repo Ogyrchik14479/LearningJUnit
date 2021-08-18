@@ -1,4 +1,4 @@
-package igor.reznikov.LearnJUnit.enums;
+package igor.reznikov.ResumeConstructor.enums;
 
 public enum GenderEnum {
     MALE,

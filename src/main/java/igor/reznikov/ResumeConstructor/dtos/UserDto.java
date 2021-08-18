@@ -1,4 +1,4 @@
-package igor.reznikov.LearnJUnit.dtos;
+package igor.reznikov.ResumeConstructor.dtos;
 
 import lombok.AccessLevel;
 import lombok.Getter;

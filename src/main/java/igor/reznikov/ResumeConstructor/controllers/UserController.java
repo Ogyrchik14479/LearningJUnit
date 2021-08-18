@@ -1,8 +1,8 @@
-package igor.reznikov.LearnJUnit.controllers;
+package igor.reznikov.ResumeConstructor.controllers;
 
-import igor.reznikov.LearnJUnit.dtos.UserDto;
-import igor.reznikov.LearnJUnit.mappers.UserMapper;
-import igor.reznikov.LearnJUnit.servecies.UserService;
+import igor.reznikov.ResumeConstructor.dtos.UserDto;
+import igor.reznikov.ResumeConstructor.mappers.UserMapper;
+import igor.reznikov.ResumeConstructor.servecies.UserService;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.mapstruct.factory.Mappers;

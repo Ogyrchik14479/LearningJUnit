@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>igor.reznikov</groupId>
-	<artifactId>LearnJUnit</artifactId>
+	<artifactId>ResumeConstructor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LearnJUnit</name>
-	<description>A demo project for learning JUnit and Spring Boot</description>
+	<name>ResumeConstructor</name>
+	<description>A demo project - Resume Constructor</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
