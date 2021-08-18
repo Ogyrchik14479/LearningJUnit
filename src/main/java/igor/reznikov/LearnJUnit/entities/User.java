@@ -1,5 +1,7 @@
 package igor.reznikov.LearnJUnit.entities;
 
+import igor.reznikov.LearnJUnit.enums.GenderEnum;
+import igor.reznikov.LearnJUnit.enums.MaritalStatusEnum;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -25,10 +27,18 @@ public class User extends AbstractPersistable<Long> {
 
     String name;
 
-    String patronymic;
-
     String surname;
 
+    String patronymic;
+
     @Enumerated(EnumType.STRING)
-    Gender gender;
+    GenderEnum genderEnum;
+
+    @Enumerated(EnumType.STRING)
+    MaritalStatusEnum maritalStatusEnum;
+
+    String telephoneNumber;
+
+    String email;
+
 }
