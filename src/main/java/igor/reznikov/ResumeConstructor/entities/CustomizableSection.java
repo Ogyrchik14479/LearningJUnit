@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Type;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Getter
@@ -21,6 +22,11 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 @Table(name = "customizable_sections")
 public class CustomizableSection extends AbstractPersistable<Long> {
+
+    String sectionName;
+
+    @Type(type = "org.hibernate.type.TextType")
+    String text;
 
     @ManyToOne
     Resume resume;
