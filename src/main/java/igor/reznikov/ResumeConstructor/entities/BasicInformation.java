@@ -1,7 +1,7 @@
 package igor.reznikov.ResumeConstructor.entities;
 
-import igor.reznikov.ResumeConstructor.enums.GenderEnum;
-import igor.reznikov.ResumeConstructor.enums.MaritalStatusEnum;
+import igor.reznikov.ResumeConstructor.enums.EmploymentTypeEnum;
+import igor.reznikov.ResumeConstructor.enums.WorkScheduleEnum;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -33,13 +33,15 @@ public class BasicInformation extends AbstractPersistable<Long> {
 
     String patronymic;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "gender")
-    GenderEnum genderEnum;
+    String photo;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "marital_status")
-    MaritalStatusEnum maritalStatusEnum;
+    @Column(name = "employment_type")
+    EmploymentTypeEnum employmentTypeEnum;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "work_schedule")
+    WorkScheduleEnum workScheduleEnum;
 
     @Column(name = "telephone_number")
     String telephoneNumber;
