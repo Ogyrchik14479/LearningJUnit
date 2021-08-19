@@ -1,6 +1,9 @@
 package igor.reznikov.ResumeConstructor.entities;
 
+import igor.reznikov.ResumeConstructor.enums.LanguageLevel;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AccessLevel;
@@ -21,6 +24,11 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 @Table(name = "languages")
 public class Language extends AbstractPersistable<Long> {
+
+    String name;
+
+    @Enumerated(EnumType.STRING)
+    LanguageLevel languageLevel;
 
     @ManyToOne
     Resume resume;
