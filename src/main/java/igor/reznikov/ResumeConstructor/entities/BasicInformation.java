@@ -2,9 +2,11 @@ package igor.reznikov.ResumeConstructor.entities;
 
 import igor.reznikov.ResumeConstructor.enums.GenderEnum;
 import igor.reznikov.ResumeConstructor.enums.MaritalStatusEnum;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -22,8 +24,8 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-@Table(name = "\"user\"")
-public class User extends AbstractPersistable<Long> {
+@Table(name = "basic_information")
+public class BasicInformation extends AbstractPersistable<Long> {
 
     String name;
 
@@ -32,13 +34,19 @@ public class User extends AbstractPersistable<Long> {
     String patronymic;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "gender")
     GenderEnum genderEnum;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "marital_status")
     MaritalStatusEnum maritalStatusEnum;
 
+    @Column(name = "telephone_number")
     String telephoneNumber;
 
     String email;
+
+    @OneToOne
+    Resume resume;
 
 }

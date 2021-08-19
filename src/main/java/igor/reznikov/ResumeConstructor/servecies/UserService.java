@@ -1,8 +1,8 @@
 package igor.reznikov.ResumeConstructor.servecies;
 
-import igor.reznikov.ResumeConstructor.entities.User;
+import igor.reznikov.ResumeConstructor.entities.BasicInformation;
 
 public interface UserService {
 
-    User getUser(Long id);
+    BasicInformation getUser(Long id);
 }

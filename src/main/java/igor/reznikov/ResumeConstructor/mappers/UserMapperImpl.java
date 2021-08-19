@@ -1,27 +1,27 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
 import igor.reznikov.ResumeConstructor.dtos.UserDto;
-import igor.reznikov.ResumeConstructor.entities.User;
+import igor.reznikov.ResumeConstructor.entities.BasicInformation;
 
 public class UserMapperImpl implements UserMapper{
     @Override
-    public UserDto userToUserDto(User user) {
+    public UserDto userToUserDto(BasicInformation basicInformation) {
 
-        if ( user == null ) {
+        if ( basicInformation == null ) {
             return null;
         }
 
         UserDto userDto = new UserDto();
-        userDto.setGender(user.getGenderEnum().toString());
-        userDto.setName(user.getName());
-        userDto.setSurname(user.getSurname());
-        userDto.setPatronymic(user.getPatronymic());
+        userDto.setGender(basicInformation.getGenderEnum().toString());
+        userDto.setName(basicInformation.getName());
+        userDto.setSurname(basicInformation.getSurname());
+        userDto.setPatronymic(basicInformation.getPatronymic());
 
         return userDto;
     }
 
     @Override
-    public User userDtoToUser(UserDto userDto) {
+    public BasicInformation userDtoToUser(UserDto userDto) {
         return null;
     }
 }

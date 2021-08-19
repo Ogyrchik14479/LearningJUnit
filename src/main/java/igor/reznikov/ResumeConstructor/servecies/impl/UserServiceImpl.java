@@ -1,7 +1,7 @@
 package igor.reznikov.ResumeConstructor.servecies.impl;
 
-import igor.reznikov.ResumeConstructor.entities.User;
-import igor.reznikov.ResumeConstructor.repositories.UserRepository;
+import igor.reznikov.ResumeConstructor.entities.BasicInformation;
+import igor.reznikov.ResumeConstructor.repositories.BasicInformationRepository;
 import igor.reznikov.ResumeConstructor.servecies.UserService;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Resource
-    UserRepository userRepository;
+    BasicInformationRepository basicInformationRepository;
 
     @Override
-    public User getUser(Long id) {
-        return userRepository.getById(id);
+    public BasicInformation getUser(Long id) {
+        return basicInformationRepository.getById(id);
     }
 }

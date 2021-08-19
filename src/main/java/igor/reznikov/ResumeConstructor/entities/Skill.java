@@ -1,7 +1,5 @@
 package igor.reznikov.ResumeConstructor.entities;
 
-import java.sql.Date;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -12,7 +10,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.annotations.Type;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Getter
@@ -22,21 +19,8 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-@Table(name = "work_experience")
-public class WorkExperience extends AbstractPersistable<Long> {
-
-    String organization;
-
-    String position;
-
-    @Column(name = "start_of_work")
-    Date startOfWork;
-
-    Date endOfWork;
-
-    @Type(type = "org.hibernate.type.TextType")
-    @Column(name = "job_responsibilities_and_achievements")
-    String jobResponsibilitiesAndAchievements;
+@Table(name = "skills")
+public class Skill extends AbstractPersistable<Long> {
 
     @ManyToOne
     Resume resume;
