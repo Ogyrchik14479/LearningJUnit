@@ -20,6 +20,8 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 public class Hobby extends AbstractPersistable<Long> {
 
+    String name;
+
     @ManyToOne
     Resume resume;
 }
