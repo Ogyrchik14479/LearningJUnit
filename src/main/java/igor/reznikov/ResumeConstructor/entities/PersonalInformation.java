@@ -1,14 +1,17 @@
 package igor.reznikov.ResumeConstructor.entities;
 
+import igor.reznikov.ResumeConstructor.enums.DegreeOfEducationEnum;
 import igor.reznikov.ResumeConstructor.enums.GenderEnum;
 import igor.reznikov.ResumeConstructor.enums.MaritalStatusEnum;
+import igor.reznikov.ResumeConstructor.enums.MigrationEnum;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +30,14 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 public class PersonalInformation extends AbstractPersistable<Long> {
 
+    @Column(name = "city_of_residence")
+    String cityOfResidence;
+
+    String citizenship;
+
+    @Column(name = "date_of_birth")
+    Date dateOfBirth;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "gender")
     GenderEnum genderEnum;
@@ -34,6 +45,15 @@ public class PersonalInformation extends AbstractPersistable<Long> {
     @Enumerated(EnumType.STRING)
     @Column(name = "marital_status")
     MaritalStatusEnum maritalStatusEnum;
+
+    @Column(name = "existence_of_children")
+    Boolean existenceOfChildren;
+
+    @Column(name = "migration")
+    MigrationEnum migrationEnum;
+
+    @Column(name = "degree_of_education")
+    DegreeOfEducationEnum degreeOfEducationEnum;
 
     @OneToOne
     @JoinColumn(name = "resume_id")
