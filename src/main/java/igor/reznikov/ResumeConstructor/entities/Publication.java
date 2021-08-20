@@ -11,6 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Type;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Getter
@@ -22,6 +23,13 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 @Table(name = "publications")
 public class Publication extends AbstractPersistable<Long> {
+
+    String name;
+
+    String link;
+
+    @Type(type = "org.hibernate.type.TextType")
+    String description;
 
     @ManyToOne
     @JoinColumn(name = "resume_id")
