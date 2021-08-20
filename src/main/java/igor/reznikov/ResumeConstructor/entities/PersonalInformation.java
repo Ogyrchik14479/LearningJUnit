@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -34,5 +36,6 @@ public class PersonalInformation extends AbstractPersistable<Long> {
     MaritalStatusEnum maritalStatusEnum;
 
     @OneToOne
+    @JoinColumn(name = "resume_id")
     Resume resume;
 }

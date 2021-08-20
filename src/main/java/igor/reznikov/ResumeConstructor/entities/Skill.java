@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AccessLevel;
@@ -33,5 +34,6 @@ public class Skill extends AbstractPersistable<Long> {
     SkillLevelEnum skillLevelEnum;
 
     @ManyToOne
+    @JoinColumn(name = "resume_id")
     Resume resume;
 }

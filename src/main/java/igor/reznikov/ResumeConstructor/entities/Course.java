@@ -1,6 +1,7 @@
 package igor.reznikov.ResumeConstructor.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AccessLevel;
@@ -23,5 +24,6 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class Course extends AbstractPersistable<Long> {
 
     @ManyToOne
+    @JoinColumn(name = "resume_id")
     Resume resume;
 }

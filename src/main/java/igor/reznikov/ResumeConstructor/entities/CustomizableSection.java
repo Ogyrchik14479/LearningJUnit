@@ -1,6 +1,7 @@
 package igor.reznikov.ResumeConstructor.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AccessLevel;
@@ -29,5 +30,6 @@ public class CustomizableSection extends AbstractPersistable<Long> {
     String text;
 
     @ManyToOne
+    @JoinColumn(name = "resume_id")
     Resume resume;
 }

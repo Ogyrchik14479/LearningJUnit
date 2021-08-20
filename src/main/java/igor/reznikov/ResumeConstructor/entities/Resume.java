@@ -1,5 +1,6 @@
 package igor.reznikov.ResumeConstructor.entities;
 
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -32,29 +33,32 @@ public class Resume extends AbstractPersistable<Long> {
     PersonalInformation personalInformation;
 
     @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
-    List<WorkExperience> workExperienceList;
+    Collection<WorkExperience> workExperienceList;
 
     @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
-    List<Education> educationList;
+    Collection<Education> educationList;
 
     @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
-    List<Course> courseList;
+    Collection<Course> courseList;
 
     @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
-    List<Achievement> achievementList;
+    Collection<Achievement> achievementList;
 
     @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
-    List<Publication> publicationList;
+    Collection<Publication> publicationList;
 
     @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
-    List<Skill> skillList;
+    Collection<Skill> skillList;
 
     @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
-    List<Language> languageList;
+    Collection<Language> languageList;
 
     @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
-    List<Hobby> hobbyList;
+    Collection<Hobby> hobbyList;
 
     @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
-    List<CustomizableSection> customizableSectionList;
+    Collection<CustomizableSection> customizableSectionList;
+
+    @OneToMany(mappedBy = "resume", cascade = CascadeType.ALL)
+    Collection<Recommendation> recommendationList;
 }

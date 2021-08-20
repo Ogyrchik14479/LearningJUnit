@@ -12,7 +12,6 @@ public class UserMapperImpl implements UserMapper{
         }
 
         UserDto userDto = new UserDto();
-        userDto.setGender(basicInformation.getGenderEnum().toString());
         userDto.setName(basicInformation.getName());
         userDto.setSurname(basicInformation.getSurname());
         userDto.setPatronymic(basicInformation.getPatronymic());

@@ -1,6 +1,5 @@
 package igor.reznikov.ResumeConstructor.entities;
 
-import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -13,7 +12,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.annotations.Type;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Getter
@@ -23,22 +21,19 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-@Table(name = "work_experience")
-public class WorkExperience extends AbstractPersistable<Long> {
+@Table(name = "recommendations")
+public class Recommendation extends AbstractPersistable<Long> {
 
-    String organization;
+    @Column(name = "company_name")
+    String companyName;
 
-    String position;
+    @Column(name = "contact_person")
+    String contactPerson;
 
-    @Column(name = "start_of_work")
-    Date startOfWork;
+    @Column(name = "telephone_number")
+    String telephoneNumber;
 
-    @Column(name = "end_of_work")
-    Date endOfWork;
-
-    @Type(type = "org.hibernate.type.TextType")
-    @Column(name = "job_responsibilities_and_achievements")
-    String jobResponsibilitiesAndAchievements;
+    String email;
 
     @ManyToOne
     @JoinColumn(name = "resume_id")

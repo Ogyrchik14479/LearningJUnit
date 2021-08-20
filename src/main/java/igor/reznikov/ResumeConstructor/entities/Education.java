@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -38,5 +39,6 @@ public class Education extends AbstractPersistable<Long> {
     Integer yearOfGraduation;
 
     @ManyToOne
+    @JoinColumn(name = "resume_id")
     Resume resume;
 }

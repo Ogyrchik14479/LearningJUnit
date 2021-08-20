@@ -1,6 +1,7 @@
 package igor.reznikov.ResumeConstructor.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -23,5 +24,6 @@ public class Hobby extends AbstractPersistable<Long> {
     String name;
 
     @ManyToOne
+    @JoinColumn(name = "resume_id")
     Resume resume;
 }
