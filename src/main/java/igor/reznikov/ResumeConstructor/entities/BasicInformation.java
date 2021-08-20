@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AccessLevel;
@@ -37,6 +36,10 @@ public class BasicInformation extends AbstractPersistable<Long> {
 
     String photo;
 
+    //TODO возможно сделать валюту выбор, и в int превратить поле
+    @Column(name = "desired_salary")
+    String desiredSalary;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "employment_type")
     EmploymentTypeEnum employmentTypeEnum;
@@ -45,6 +48,7 @@ public class BasicInformation extends AbstractPersistable<Long> {
     @Column(name = "work_schedule")
     WorkScheduleEnum workScheduleEnum;
 
+    //TODO добавить boolean для поменты есть в телеге, вотсапп, вайбер
     @Column(name = "telephone_number")
     String telephoneNumber;
 
