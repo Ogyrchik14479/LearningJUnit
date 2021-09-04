@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "351ce473-167b-4b7a-bfe8-ad65e1876342",
+		"name": "ResumeConstrucror",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create resume",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"basicInformation\": {\r\n    \"name\": \"Александр\",\r\n    \"surname\": \"Барадач\",\r\n    \"patronymic\": \"Радионович\",\r\n    \"desiredSalary\": \"100.000\",\r\n    \"employmentType\": \"FULL\",\r\n    \"workSchedule\": \"FULL_TIME\",\r\n    \"telephoneNumber\": \"+79998989898\",\r\n    \"email\": \"test@mail.ru\"\r\n  },\r\n  \"personalInformation\": {\r\n    \"cityOfResidence\": \"Moscow\",\r\n    \"citizenship\": \"РФ\",\r\n    \"dateOfBirth\": \"12.05.1996\",\r\n    \"gender\": \"MALE\",\r\n    \"maritalStatus\": \"NOT_MARRIED\",\r\n    \"existenceOfChildren\": \"false\",\r\n    \"migration\": \"IMPOSSIBLE\",\r\n    \"degreeOfEducation\": \"HIGHER\"\r\n  },\r\n  \"workExperienceList\": [\r\n    {\r\n      \"organization\": \"Google\",\r\n      \"position\": \"java-developer\",\r\n      \"startOfWork\": \"10.10.2020\",\r\n      \"endOfWork\": \"10.12.2020\",\r\n      \"jobResponsibilitiesAndAchievements\": \"уронил прод\"\r\n    },\r\n    {\r\n      \"organization\": \"Yandex\",\r\n      \"position\": \"Yandex-developer\",\r\n      \"startOfWork\": \"10.12.2020\",\r\n      \"endOfWork\": \"10.02.2021\",\r\n      \"jobResponsibilitiesAndAchievements\": \"уронил прод\"\r\n    }\r\n  ],\r\n  \"educationList\": [\r\n    {\r\n      \"institution\": \"Бауманка\",\r\n      \"faculty\": \"факультет изучения резиновых пик\",\r\n      \"specialization\": \"как с резиновой пикой захватить мир?\",\r\n      \"formOfEducation\": \"INTRAMURAL\",\r\n      \"yearOfGraduation\": \"2024\"\r\n    },\r\n    {\r\n      \"institution\": \"МГУ\",\r\n      \"faculty\": \"Информационные технологии\",\r\n      \"specialization\": \"И всё же как захватить мир с реиновой пикой?\",\r\n      \"formOfEducation\": \"INTRAMURAL\",\r\n      \"yearOfGraduation\": \"2020\"\r\n    }\r\n  ],\r\n  \"courseList\": [\r\n    {\r\n      \"name\": \"С нуля до гуру за 5 минут\",\r\n      \"institution\": \"Институт бичей\",\r\n      \"startOfCourse\": \"10.10.2020\",\r\n      \"endOfCourse\": \"10.12.2020\",\r\n      \"description\": \"стань бичом за 5 минут\"\r\n    },\r\n    {\r\n      \"name\": \"научить ходить за 80 минут\",\r\n      \"institution\": \"Институт бичей\",\r\n      \"startOfCourse\": \"12.10.2020\",\r\n      \"endOfCourse\": \"10.12.2021\",\r\n      \"description\": \"научить ходить за 80 минут\"\r\n    }\r\n  ],\r\n  \"achievementList\": [\r\n    {\r\n      \"description\": \"Что-то сделал хорошее\"\r\n    },\r\n    {\r\n      \"description\": \"Что-то сделал хорошее2\"\r\n    }\r\n  ],\r\n  \"publicationList\": [\r\n    {\r\n      \"name\": \"Подкаты к Иринке\",\r\n      \"link\": \"https://stackoverflow.com/\",\r\n      \"description\": \"Научу как подкатывать к любой Иринке на районе\"\r\n    },\r\n    {\r\n      \"name\": \"О Маринке\",\r\n      \"link\": \"https://stackoverflow.com/\",\r\n      \"description\": \"Маринка наше всё\"\r\n    }\r\n  ],\r\n  \"skillList\": [\r\n    {\r\n      \"name\": \"java\",\r\n      \"skillLevel\": \"NOVICE\"\r\n    },\r\n    {\r\n      \"name\": \"javaScript\",\r\n      \"skillLevel\": \"BEGINNER\"\r\n    }\r\n  ],\r\n  \"languageList\": [\r\n    {\r\n      \"name\": \"Аллкашный\",\r\n      \"languageLevel\": \"ADVANCED\"\r\n    },\r\n    {\r\n      \"name\": \"Русский\",\r\n      \"languageLevel\": \"ADVANCED\"\r\n    }\r\n  ],\r\n  \"hobbyList\": [\r\n    {\r\n      \"name\": \"Бросать ружью на дальность\"\r\n    },\r\n    {\r\n      \"name\": \"Писать лёжа\"\r\n    }\r\n  ],\r\n  \"customizableSectionList\": [\r\n    {\r\n      \"sectionName\": \"Моя кастомная категория1\",\r\n      \"text\": \"я есть грут\"\r\n    },\r\n    {\r\n      \"sectionName\": \"Моя кастомная категория2\",\r\n      \"text\": \"я есть калбаса\"\r\n    }\r\n  ],\r\n  \"recommendationList\": [\r\n    {\r\n      \"companyName\": \"Google\",\r\n      \"contactPerson\": \"pedro avacado\",\r\n      \"telephoneNumber\": \"+79999999999\",\r\n      \"email\": \"pedro@mail.ru\"\r\n    },\r\n    {\r\n      \"companyName\": \"Yandex\",\r\n      \"contactPerson\": \"pedro innokentiev\",\r\n      \"telephoneNumber\": \"+79999999999\",\r\n      \"email\": \"innokentiev@mail.ru\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/resume",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"resume"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get resume by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/resume/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"resume",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
