@@ -9,12 +9,23 @@ import org.mapstruct.factory.Mappers;
 @Mapper( uses = {
         BasicInformationMapper.class,
         PersonalInformationMapper.class,
+        WorkExperienceMapper.class,
+        EducationMapper.class,
         CourseMapper.class,
+        AchievementMapper.class,
+        PublicationMapper.class,
+        SkillMapper.class,
+        LanguageMapper.class,
+        HobbyMapper.class,
+        CustomizableSectionMapper.class,
+        RecommendationMapper.class,
 })
 public interface ResumeMapper {
 
     ResumeMapper INSTANCE = Mappers.getMapper(ResumeMapper.class);
 
     ResumeDto toResumeDTO(Resume resume);
+
+    Resume toResume(ResumeDto resumeDto);
 }
 

@@ -154,6 +154,12 @@ public class DtosTest {
     @Test
     void toResumeDto() {
         DateMapper dateMapper = new DateMapper();
+
+        Resume resume = Resume.builder()
+                .courseList(new ArrayList<>())
+                .build();
+
+
         BasicInformation basicInformation = BasicInformation.builder()
                 .employmentTypeEnum(EmploymentTypeEnum.FULL)
                 .desiredSalary("1000000")
@@ -163,6 +169,7 @@ public class DtosTest {
                 .surname("Reznikov")
                 .telephoneNumber("+79001111111")
                 .workScheduleEnum(WorkScheduleEnum.FULL_TIME)
+                .resume(resume)
                 .build();
 
         PersonalInformation personalInformation = PersonalInformation.builder()
@@ -174,12 +181,7 @@ public class DtosTest {
                 .existenceOfChildren(false)
                 .migrationEnum(MigrationEnum.DESIRABLE)
                 .degreeOfEducationEnum(DegreeOfEducationEnum.AVERAGE)
-                .build();
-
-        Resume resume = Resume.builder()
-                .courseList(new ArrayList<>())
-                .personalInformation(personalInformation)
-                .basicInformation(basicInformation)
+                .resume(resume)
                 .build();
 
         Course course1 = Course.builder()
@@ -201,9 +203,11 @@ public class DtosTest {
                 .build();
         resume.getCourseList().add(course1);
         resume.getCourseList().add(course2);
+        resume.setBasicInformation(basicInformation);
+        resume.setPersonalInformation(personalInformation);
 
         ResumeDto resumeDto = ResumeMapper.INSTANCE.toResumeDTO(resume);
-        resumeRepository.save(resume);
+        Resume resume1 = resumeRepository.save(resume);
         System.out.println("");
     }
 
