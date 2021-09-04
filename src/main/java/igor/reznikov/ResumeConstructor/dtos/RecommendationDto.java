@@ -16,6 +16,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RecommendationDto  {
 
+    String id;
+
     String companyName;
 
     String contactPerson;

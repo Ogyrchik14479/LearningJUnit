@@ -16,6 +16,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CustomizableSectionDto {
 
+    String id;
+
     String sectionName;
 
     String text;

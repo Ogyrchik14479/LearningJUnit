@@ -16,5 +16,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class HobbyDto {
 
+    String id;
+
     String name;
 }

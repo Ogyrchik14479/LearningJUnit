@@ -16,6 +16,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BasicInformationDto {
 
+    String id;
+
     String name;
 
     String surname;

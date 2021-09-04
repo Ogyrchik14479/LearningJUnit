@@ -16,6 +16,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PublicationDto {
 
+    String id;
+
     String name;
 
     String link;

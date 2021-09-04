@@ -16,6 +16,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class LanguageDto {
 
+    String id;
+
     String name;
 
     String languageLevel;

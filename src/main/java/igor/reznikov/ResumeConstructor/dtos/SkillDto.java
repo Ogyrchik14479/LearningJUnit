@@ -16,6 +16,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SkillDto  {
 
+    String id;
+
     String name;
 
     String skillLevel;

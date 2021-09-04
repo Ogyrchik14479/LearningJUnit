@@ -16,6 +16,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class WorkExperienceDto {
 
+    String id;
+
     String organization;
 
     String position;

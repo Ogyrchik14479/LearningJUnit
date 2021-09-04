@@ -16,6 +16,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PersonalInformationDto {
 
+    String id;
+
     String cityOfResidence;
 
     String citizenship;
