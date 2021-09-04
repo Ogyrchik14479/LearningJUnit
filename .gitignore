@@ -35,3 +35,6 @@ build/
 ### Frontend ###
 /node_modules/
 /package-lock.json
+
+### dev-profile ###
+/src/main/resources/application-dev.properties
