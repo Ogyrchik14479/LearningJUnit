@@ -1,12 +1,13 @@
-package igor.reznikov.ResumeConstructor.entities;
+package igor.reznikov.ResumeConstructor.dtos;
 
-import igor.reznikov.ResumeConstructor.enums.LanguageLevelEnum;
+import igor.reznikov.ResumeConstructor.entities.Resume;
+import igor.reznikov.ResumeConstructor.enums.FormOfEducationEnum;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,16 +23,16 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Entity
-@Table(name = "languages")
-public class Language extends AbstractPersistable<Long> {
+public class EducationDto  {
 
-    String name;
+    String institution;
 
-    @Enumerated(EnumType.STRING)
-    LanguageLevelEnum languageLevelEnum;
+    String faculty;
 
-    @ManyToOne
-    @JoinColumn(name = "resume_id")
-    Resume resume;
+    String specialization;
+
+    String formOfEducation;
+
+    String yearOfGraduation;
+
 }
