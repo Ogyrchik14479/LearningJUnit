@@ -22,7 +22,7 @@ public class ResumeController {
     }
 
     @PostMapping
-    public Long createLord(@RequestBody ResumeDto resumeDto) {
+    public Long createResume(@RequestBody ResumeDto resumeDto) {
         return resumeService.add(resumeDto);
     }
 
