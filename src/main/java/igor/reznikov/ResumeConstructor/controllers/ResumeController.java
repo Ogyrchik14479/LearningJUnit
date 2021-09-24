@@ -1,5 +1,6 @@
 package igor.reznikov.ResumeConstructor.controllers;
 
+import igor.reznikov.ResumeConstructor.dtos.request.ResumePost;
 import igor.reznikov.ResumeConstructor.dtos.response.ResumeView;
 import igor.reznikov.ResumeConstructor.servecies.ResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class ResumeController {
     }
 
     @PostMapping
-    public Long createResume(@RequestBody ResumeView resumeView) {
+    public Long createResume(@RequestBody ResumePost resumeView) {
         return resumeService.add(resumeView);
     }
 
