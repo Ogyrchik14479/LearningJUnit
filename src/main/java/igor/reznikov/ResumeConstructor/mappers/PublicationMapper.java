@@ -1,6 +1,6 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
-import igor.reznikov.ResumeConstructor.dtos.PublicationDto;
+import igor.reznikov.ResumeConstructor.dtos.response.PublicationView;
 import igor.reznikov.ResumeConstructor.entities.Publication;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -10,7 +10,7 @@ public interface PublicationMapper {
 
     PublicationMapper INSTANCE = Mappers.getMapper(PublicationMapper.class);
 
-    PublicationDto toPublicationDto(Publication publication);
+    PublicationView toPublicationDto(Publication publication);
 
-    Publication toPublication(PublicationDto publicationDto);
+    Publication toPublication(PublicationView publicationView);
 }

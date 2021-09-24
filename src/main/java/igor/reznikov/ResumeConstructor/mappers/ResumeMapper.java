@@ -1,6 +1,6 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
-import igor.reznikov.ResumeConstructor.dtos.ResumeDto;
+import igor.reznikov.ResumeConstructor.dtos.response.ResumeView;
 import igor.reznikov.ResumeConstructor.entities.Resume;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -24,8 +24,8 @@ public interface ResumeMapper {
 
     ResumeMapper INSTANCE = Mappers.getMapper(ResumeMapper.class);
 
-    ResumeDto toResumeDTO(Resume resume);
+    ResumeView toResumeDTO(Resume resume);
 
-    Resume toResume(ResumeDto resumeDto);
+    Resume toResume(ResumeView resumeView);
 }
 

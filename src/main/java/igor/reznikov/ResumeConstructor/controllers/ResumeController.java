@@ -1,6 +1,6 @@
 package igor.reznikov.ResumeConstructor.controllers;
 
-import igor.reznikov.ResumeConstructor.dtos.ResumeDto;
+import igor.reznikov.ResumeConstructor.dtos.response.ResumeView;
 import igor.reznikov.ResumeConstructor.servecies.ResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +22,12 @@ public class ResumeController {
     }
 
     @PostMapping
-    public Long createResume(@RequestBody ResumeDto resumeDto) {
-        return resumeService.add(resumeDto);
+    public Long createResume(@RequestBody ResumeView resumeView) {
+        return resumeService.add(resumeView);
     }
 
     @GetMapping("/{id}")
-    public ResumeDto getResumeById(@PathVariable Long id){
+    public ResumeView getResumeById(@PathVariable Long id){
         return resumeService.getResumeById(id);
     }
 }

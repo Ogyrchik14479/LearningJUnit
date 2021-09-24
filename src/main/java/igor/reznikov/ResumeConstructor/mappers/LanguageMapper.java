@@ -1,6 +1,6 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
-import igor.reznikov.ResumeConstructor.dtos.LanguageDto;
+import igor.reznikov.ResumeConstructor.dtos.response.LanguageView;
 import igor.reznikov.ResumeConstructor.entities.Language;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -13,8 +13,8 @@ public interface LanguageMapper {
     LanguageMapper INSTANCE = Mappers.getMapper(LanguageMapper.class);
 
     @Mapping(source = "languageLevelEnum", target = "languageLevel")
-    LanguageDto toLanguageDto(Language language);
+    LanguageView toLanguageDto(Language language);
 
     @InheritInverseConfiguration
-    Language toLanguage(LanguageDto languageDto);
+    Language toLanguage(LanguageView languageView);
 }

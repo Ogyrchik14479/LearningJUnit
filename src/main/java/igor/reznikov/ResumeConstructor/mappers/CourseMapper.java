@@ -1,6 +1,6 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
-import igor.reznikov.ResumeConstructor.dtos.CourseDto;
+import igor.reznikov.ResumeConstructor.dtos.response.CourseView;
 import igor.reznikov.ResumeConstructor.entities.Course;
 import java.util.List;
 import org.mapstruct.Mapper;
@@ -11,11 +11,11 @@ public interface CourseMapper {
 
     CourseMapper INSTANCE = Mappers.getMapper(CourseMapper.class);
 
-    CourseDto toCourseDto(Course course);
+    CourseView toCourseDto(Course course);
 
-    Course toCourse(CourseDto courseDto);
+    Course toCourse(CourseView courseView);
 
-    List<CourseDto> toCourseDtoList(List<Course> courseList);
+    List<CourseView> toCourseDtoList(List<Course> courseList);
 
-    List<Course> toCourseList(List<CourseDto> courseDtoList);
+    List<Course> toCourseList(List<CourseView> courseViewList);
 }

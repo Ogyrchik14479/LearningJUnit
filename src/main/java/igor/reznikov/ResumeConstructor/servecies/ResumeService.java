@@ -1,10 +1,10 @@
 package igor.reznikov.ResumeConstructor.servecies;
 
-import igor.reznikov.ResumeConstructor.dtos.ResumeDto;
+import igor.reznikov.ResumeConstructor.dtos.response.ResumeView;
 
 public interface ResumeService {
 
-    Long add(ResumeDto resumeDto);
+    Long add(ResumeView resumeView);
 
-    ResumeDto getResumeById(Long id);
+    ResumeView getResumeById(Long id);
 }

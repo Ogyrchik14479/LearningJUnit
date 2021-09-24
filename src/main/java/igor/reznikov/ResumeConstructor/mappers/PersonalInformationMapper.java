@@ -1,6 +1,6 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
-import igor.reznikov.ResumeConstructor.dtos.PersonalInformationDto;
+import igor.reznikov.ResumeConstructor.dtos.response.PersonalInformationView;
 import igor.reznikov.ResumeConstructor.entities.PersonalInformation;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -20,10 +20,10 @@ public interface PersonalInformationMapper {
             @Mapping(source = "genderEnum", target = "gender"),
             @Mapping(target = "dateOfBirth")
     })
-    PersonalInformationDto toPersonalInformationDto(PersonalInformation personalInformation);
+    PersonalInformationView toPersonalInformationDto(PersonalInformation personalInformation);
 
     @InheritInverseConfiguration
     @Mapping(target = "dateOfBirth")
-    PersonalInformation toPersonalInformation(PersonalInformationDto personalInformationDto);
+    PersonalInformation toPersonalInformation(PersonalInformationView personalInformationView);
 
 }

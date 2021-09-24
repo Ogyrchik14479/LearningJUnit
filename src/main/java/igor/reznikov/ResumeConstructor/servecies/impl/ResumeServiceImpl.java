@@ -1,6 +1,6 @@
 package igor.reznikov.ResumeConstructor.servecies.impl;
 
-import igor.reznikov.ResumeConstructor.dtos.ResumeDto;
+import igor.reznikov.ResumeConstructor.dtos.response.ResumeView;
 import igor.reznikov.ResumeConstructor.entities.Resume;
 import igor.reznikov.ResumeConstructor.mappers.ResumeMapper;
 import igor.reznikov.ResumeConstructor.repositories.ResumeRepository;
@@ -15,13 +15,13 @@ public class ResumeServiceImpl implements ResumeService {
     ResumeRepository resumeRepository;
 
     @Override
-    public Long add(ResumeDto resumeDto) {
-        Resume resume = ResumeMapper.INSTANCE.toResume(resumeDto);
+    public Long add(ResumeView resumeView) {
+        Resume resume = ResumeMapper.INSTANCE.toResume(resumeView);
         return resumeRepository.save(resume).getId();
     }
 
     @Override
-    public ResumeDto getResumeById(Long id) {
+    public ResumeView getResumeById(Long id) {
         return ResumeMapper.INSTANCE.toResumeDTO(resumeRepository.findById(id).get());
     }
 }

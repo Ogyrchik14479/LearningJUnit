@@ -1,4 +1,4 @@
-package igor.reznikov.ResumeConstructor.dtos;
+package igor.reznikov.ResumeConstructor.dtos.request;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -14,9 +14,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SkillDto  {
-
-    String id;
+public class SkillPost {
 
     String name;
 

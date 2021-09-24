@@ -1,4 +1,4 @@
-package igor.reznikov.ResumeConstructor.dtos;
+package igor.reznikov.ResumeConstructor.dtos.request;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -14,16 +14,12 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class RecommendationDto  {
+public class PublicationPost {
 
-    String id;
+    String name;
 
-    String companyName;
+    String link;
 
-    String contactPerson;
-
-    String telephoneNumber;
-
-    String email;
+    String description;
 
 }

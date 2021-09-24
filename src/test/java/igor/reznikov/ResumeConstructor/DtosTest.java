@@ -1,10 +1,10 @@
 package igor.reznikov.ResumeConstructor;
 
-import igor.reznikov.ResumeConstructor.dtos.BasicInformationDto;
-import igor.reznikov.ResumeConstructor.dtos.CourseDto;
-import igor.reznikov.ResumeConstructor.dtos.PersonalInformationDto;
-import igor.reznikov.ResumeConstructor.dtos.ResumeDto;
-import igor.reznikov.ResumeConstructor.dtos.WorkExperienceDto;
+import igor.reznikov.ResumeConstructor.dtos.response.BasicInformationView;
+import igor.reznikov.ResumeConstructor.dtos.response.CourseView;
+import igor.reznikov.ResumeConstructor.dtos.response.PersonalInformationView;
+import igor.reznikov.ResumeConstructor.dtos.response.ResumeView;
+import igor.reznikov.ResumeConstructor.dtos.response.WorkExperienceView;
 import igor.reznikov.ResumeConstructor.entities.BasicInformation;
 import igor.reznikov.ResumeConstructor.entities.Course;
 import igor.reznikov.ResumeConstructor.entities.PersonalInformation;
@@ -46,13 +46,13 @@ public class DtosTest {
                 .workScheduleEnum(WorkScheduleEnum.FULL_TIME)
                 .build();
 
-        BasicInformationDto basicInformationDto = BasicInformationMapper.INSTANCE.toBasicInformationDto(basicInformation);
-        System.out.println(basicInformationDto);
+        BasicInformationView basicInformationView = BasicInformationMapper.INSTANCE.toBasicInformationDto(basicInformation);
+        System.out.println(basicInformationView);
     }
 
     @Test
     void toBasicInformationTest() {
-        BasicInformationDto basicInformationDto = BasicInformationDto.builder()
+        BasicInformationView basicInformationView = BasicInformationView.builder()
                 .employmentType("FULL")
                 .desiredSalary("1000000")
                 .email("reznikov.igor@mail.ru")
@@ -63,13 +63,13 @@ public class DtosTest {
                 .workSchedule("FULL_TIME")
                 .build();
 
-        BasicInformation basicInformation = BasicInformationMapper.INSTANCE.toBasicInformation(basicInformationDto);
+        BasicInformation basicInformation = BasicInformationMapper.INSTANCE.toBasicInformation(basicInformationView);
         System.out.println(basicInformation);
     }
 
     @Test
     void toPersonalInformationTest() {
-        PersonalInformationDto personalInformationDto = PersonalInformationDto.builder()
+        PersonalInformationView personalInformationView = PersonalInformationView.builder()
                 .cityOfResidence("Moscow")
                 .citizenship("РФ")
                 .dateOfBirth("14.08.1996")
@@ -80,7 +80,7 @@ public class DtosTest {
                 .degreeOfEducation("HIGHER")
                 .build();
 
-        PersonalInformation personalInformation = PersonalInformationMapper.INSTANCE.toPersonalInformation(personalInformationDto);
+        PersonalInformation personalInformation = PersonalInformationMapper.INSTANCE.toPersonalInformation(personalInformationView);
         System.out.println("");
     }
 
@@ -97,7 +97,7 @@ public class DtosTest {
                 .degreeOfEducationEnum(DegreeOfEducationEnum.AVERAGE)
                 .build();
 
-        PersonalInformationDto personalInformationDto = PersonalInformationMapper.INSTANCE.toPersonalInformationDto(personalInformation);
+        PersonalInformationView personalInformationView = PersonalInformationMapper.INSTANCE.toPersonalInformationDto(personalInformation);
         System.out.println("");
     }
 
@@ -113,7 +113,7 @@ public class DtosTest {
                 .description("A quick way to become a programmer")
                 .build();
 
-        CourseDto courseDto = CourseMapper.INSTANCE.toCourseDto(course1);
+        CourseView courseView = CourseMapper.INSTANCE.toCourseDto(course1);
         System.out.println();
     }
 
@@ -142,7 +142,7 @@ public class DtosTest {
         workExperienceList.add(workExperience1);
         workExperienceList.add(workExperience2);
 
-        List<WorkExperienceDto> workExperienceDtoList = WorkExperienceMapper.INSTANCE.toWorkExperienceDtoList(workExperienceList);
+        List<WorkExperienceView> workExperienceViewList = WorkExperienceMapper.INSTANCE.toWorkExperienceDtoList(workExperienceList);
         System.out.println();
 
     }
@@ -206,7 +206,7 @@ public class DtosTest {
         resume.setBasicInformation(basicInformation);
         resume.setPersonalInformation(personalInformation);
 
-        ResumeDto resumeDto = ResumeMapper.INSTANCE.toResumeDTO(resume);
+        ResumeView resumeView = ResumeMapper.INSTANCE.toResumeDTO(resume);
         Resume resume1 = resumeRepository.save(resume);
         System.out.println("");
     }

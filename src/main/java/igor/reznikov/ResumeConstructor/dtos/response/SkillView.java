@@ -1,4 +1,4 @@
-package igor.reznikov.ResumeConstructor.dtos;
+package igor.reznikov.ResumeConstructor.dtos.response;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -14,12 +14,12 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CustomizableSectionDto {
+public class SkillView {
 
     String id;
 
-    String sectionName;
+    String name;
 
-    String text;
+    String skillLevel;
 
 }

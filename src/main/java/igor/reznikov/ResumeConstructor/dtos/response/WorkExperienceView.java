@@ -1,4 +1,4 @@
-package igor.reznikov.ResumeConstructor.dtos;
+package igor.reznikov.ResumeConstructor.dtos.response;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -14,18 +14,19 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class EducationDto  {
+public class WorkExperienceView {
 
     String id;
 
-    String institution;
+    String organization;
 
-    String faculty;
+    String position;
 
-    String specialization;
+    String startOfWork;
 
-    String formOfEducation;
+    String endOfWork;
 
-    String yearOfGraduation;
+    //TODO мб лист?
+    String jobResponsibilitiesAndAchievements;
 
 }
