@@ -26,4 +26,5 @@ public class EducationPost {
 
     String yearOfGraduation;
 
+    Long resumeId;
 }

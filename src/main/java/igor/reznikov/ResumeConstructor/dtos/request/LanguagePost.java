@@ -20,4 +20,5 @@ public class LanguagePost {
 
     String languageLevel;
 
+    Long resumeId;
 }

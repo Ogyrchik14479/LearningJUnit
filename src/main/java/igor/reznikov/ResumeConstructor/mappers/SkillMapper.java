@@ -1,5 +1,6 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
+import igor.reznikov.ResumeConstructor.dtos.request.SkillPost;
 import igor.reznikov.ResumeConstructor.dtos.response.SkillView;
 import igor.reznikov.ResumeConstructor.entities.Skill;
 import org.mapstruct.InheritInverseConfiguration;
@@ -17,4 +18,8 @@ public interface SkillMapper {
 
     @InheritInverseConfiguration
     Skill toSkill(SkillView skillView);
+
+    @InheritInverseConfiguration
+    @Mapping(target = "resume.id", source = "resumeId")
+    Skill toSkill(SkillPost skillPost);
 }

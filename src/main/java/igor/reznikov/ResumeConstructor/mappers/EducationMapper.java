@@ -1,5 +1,6 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
+import igor.reznikov.ResumeConstructor.dtos.request.EducationPost;
 import igor.reznikov.ResumeConstructor.dtos.response.EducationView;
 import igor.reznikov.ResumeConstructor.entities.Education;
 import org.mapstruct.InheritInverseConfiguration;
@@ -17,4 +18,8 @@ public interface EducationMapper {
 
     @InheritInverseConfiguration
     Education toEducation(EducationView educationView);
+
+    @InheritInverseConfiguration
+    @Mapping(target = "resume.id", source = "resumeId")
+    Education toEducation(EducationPost educationPost);
 }

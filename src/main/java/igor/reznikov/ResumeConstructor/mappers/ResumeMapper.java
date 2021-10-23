@@ -4,6 +4,8 @@ import igor.reznikov.ResumeConstructor.dtos.request.ResumePost;
 import igor.reznikov.ResumeConstructor.dtos.response.ResumeView;
 import igor.reznikov.ResumeConstructor.entities.Resume;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 

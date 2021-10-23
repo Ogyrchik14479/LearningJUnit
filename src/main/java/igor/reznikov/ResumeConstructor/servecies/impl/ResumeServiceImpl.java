@@ -17,8 +17,30 @@ public class ResumeServiceImpl implements ResumeService {
 
     @Override
     public Long add(ResumePost resumePost) {
+
+        Long resumeId = save(new Resume()).getId();
+
+        resumePost.setId(resumeId);
+        resumePost.getBasicInformation().setResumeId(resumeId);
+        resumePost.getPersonalInformation().setResumeId(resumeId);
+        resumePost.getWorkExperienceList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getEducationList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getCourseList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getAchievementList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getPublicationList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getSkillList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getLanguageList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getHobbyList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getCourseList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getCustomizableSectionList().forEach(item -> item.setResumeId(resumeId));
+        resumePost.getRecommendationList().forEach(item -> item.setResumeId(resumeId));
+
         Resume resume = ResumeMapper.INSTANCE.toResume(resumePost);
         return resumeRepository.save(resume).getId();
+    }
+
+    private Resume save(Resume resume) {
+        return resumeRepository.save(resume);
     }
 
     @Override

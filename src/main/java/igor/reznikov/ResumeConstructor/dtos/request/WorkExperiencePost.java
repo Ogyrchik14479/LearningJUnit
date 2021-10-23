@@ -27,4 +27,5 @@ public class WorkExperiencePost {
     //TODO мб лист?
     String jobResponsibilitiesAndAchievements;
 
+    Long resumeId;
 }

@@ -22,4 +22,5 @@ public class PublicationPost {
 
     String description;
 
+    Long resumeId;
 }

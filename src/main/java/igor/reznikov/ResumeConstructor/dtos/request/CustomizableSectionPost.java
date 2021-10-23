@@ -20,4 +20,5 @@ public class CustomizableSectionPost {
 
     String text;
 
+    Long resumeId;
 }

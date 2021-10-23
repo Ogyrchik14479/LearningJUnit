@@ -1,5 +1,6 @@
 package igor.reznikov.ResumeConstructor.dtos.request;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -17,27 +18,29 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ResumePost {
 
-    BasicInformationPost basicInformation;
+    Long id;
 
-    PersonalInformationPost personalInformation;
+    BasicInformationPost basicInformation = new BasicInformationPost();
 
-    Collection<WorkExperiencePost> workExperienceList;
+    PersonalInformationPost personalInformation = new PersonalInformationPost();
 
-    Collection<EducationPost> educationList;
+    Collection<WorkExperiencePost> workExperienceList = new ArrayList<>();
 
-    Collection<CoursePost> courseList;
+    Collection<EducationPost> educationList = new ArrayList<>();
 
-    Collection<AchievementPost> achievementList;
+    Collection<CoursePost> courseList = new ArrayList<>();
 
-    Collection<PublicationPost> publicationList;
+    Collection<AchievementPost> achievementList = new ArrayList<>();
 
-    Collection<SkillPost> skillList;
+    Collection<PublicationPost> publicationList = new ArrayList<>();
 
-    Collection<LanguagePost> languageList;
+    Collection<SkillPost> skillList = new ArrayList<>();
 
-    Collection<HobbyPost> hobbyList;
+    Collection<LanguagePost> languageList = new ArrayList<>();
 
-    Collection<CustomizableSectionPost> customizableSectionList;
+    Collection<HobbyPost> hobbyList = new ArrayList<>();
 
-    Collection<RecommendationPost> recommendationList;
+    Collection<CustomizableSectionPost> customizableSectionList = new ArrayList<>();
+
+    Collection<RecommendationPost> recommendationList = new ArrayList<>();
 }

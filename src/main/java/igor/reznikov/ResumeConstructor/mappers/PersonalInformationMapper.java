@@ -1,5 +1,6 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
+import igor.reznikov.ResumeConstructor.dtos.request.PersonalInformationPost;
 import igor.reznikov.ResumeConstructor.dtos.response.PersonalInformationView;
 import igor.reznikov.ResumeConstructor.entities.PersonalInformation;
 import org.mapstruct.InheritInverseConfiguration;
@@ -26,4 +27,8 @@ public interface PersonalInformationMapper {
     @Mapping(target = "dateOfBirth")
     PersonalInformation toPersonalInformation(PersonalInformationView personalInformationView);
 
+    @InheritInverseConfiguration
+    @Mapping(target = "dateOfBirth")
+    @Mapping(target = "resume.id", source = "resumeId")
+    PersonalInformation toPersonalInformation(PersonalInformationPost personalInformationPost);
 }

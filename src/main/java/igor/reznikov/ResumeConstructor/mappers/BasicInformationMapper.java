@@ -1,5 +1,6 @@
 package igor.reznikov.ResumeConstructor.mappers;
 
+import igor.reznikov.ResumeConstructor.dtos.request.BasicInformationPost;
 import igor.reznikov.ResumeConstructor.dtos.response.BasicInformationView;
 import igor.reznikov.ResumeConstructor.entities.BasicInformation;
 import org.mapstruct.InheritInverseConfiguration;
@@ -14,11 +15,15 @@ public interface BasicInformationMapper {
     BasicInformationMapper INSTANCE = Mappers.getMapper(BasicInformationMapper.class);
 
     @Mappings({
-        @Mapping(source = "employmentTypeEnum", target = "employmentType"),
-        @Mapping(source = "workScheduleEnum", target = "workSchedule")
+            @Mapping(source = "employmentTypeEnum", target = "employmentType"),
+            @Mapping(source = "workScheduleEnum", target = "workSchedule")
     })
     BasicInformationView toBasicInformationDto(BasicInformation basicInformation);
 
     @InheritInverseConfiguration
     BasicInformation toBasicInformation(BasicInformationView basicInformationView);
+
+    @InheritInverseConfiguration
+    @Mapping(target = "resume.id", source = "resumeId")
+    BasicInformation toBasicInformation(BasicInformationPost basicInformationPost);
 }

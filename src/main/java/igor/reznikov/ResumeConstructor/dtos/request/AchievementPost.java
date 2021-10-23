@@ -18,4 +18,5 @@ public class AchievementPost {
 
     String description;
 
+    Long resumeId;
 }
