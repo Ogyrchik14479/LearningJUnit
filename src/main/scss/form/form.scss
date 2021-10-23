@@ -58,6 +58,8 @@ form [type="submit"] {
   margin: 0;
   width: 300px;
   height: 163px;
+  border-radius: 5px;
+  overflow: hidden;
 
   @media (max-width: 599px) {
     width: 100%;
@@ -97,6 +99,9 @@ form [type="submit"] {
 }
 
 .box-infos__right .field img._uploaded {
+  width: 100%;
+  opacity: 1;
+  border-radius: 5px;
 }
 
 .box-infos_block {
