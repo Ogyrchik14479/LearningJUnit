@@ -26,4 +26,5 @@ public class CoursePost {
 
     String description;
 
+    Long resumeId;
 }

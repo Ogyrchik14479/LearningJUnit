@@ -23,8 +23,9 @@ public class ResumeController {
     }
 
     @PostMapping
-    public Long createResume(@RequestBody ResumePost resumeView) {
-        return resumeService.add(resumeView);
+    public Long createResume(@RequestBody ResumePost resumePost) {
+
+        return resumeService.add(resumePost);
     }
 
     @GetMapping("/{id}")

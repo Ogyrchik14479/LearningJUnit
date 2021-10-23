@@ -32,4 +32,5 @@ public class PersonalInformationPost {
 
     String degreeOfEducation;
 
+    Long resumeId;
 }

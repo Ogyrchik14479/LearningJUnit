@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -15,6 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import org.springframework.lang.Nullable;
 
 @Getter
 @Setter
@@ -24,7 +27,9 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "resumes")
-public class Resume extends AbstractPersistable<Long> {
+public class Resume {
+
+    @Id @GeneratedValue private @Nullable Long id;
 
     @OneToOne(mappedBy = "resume", cascade = CascadeType.ALL)
     BasicInformation basicInformation;

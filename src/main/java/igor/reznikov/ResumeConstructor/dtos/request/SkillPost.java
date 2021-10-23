@@ -20,4 +20,5 @@ public class SkillPost {
 
     String skillLevel;
 
+    Long resumeId;
 }

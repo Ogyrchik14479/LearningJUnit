@@ -17,4 +17,6 @@ import lombok.experimental.FieldDefaults;
 public class HobbyPost {
 
     String name;
+
+    Long resumeId;
 }

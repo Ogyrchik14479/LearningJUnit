@@ -32,5 +32,6 @@ public class BasicInformationPost {
 
     String email;
 
+    Long resumeId;
 }
 

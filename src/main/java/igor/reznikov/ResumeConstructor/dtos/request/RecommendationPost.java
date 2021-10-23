@@ -24,4 +24,5 @@ public class RecommendationPost {
 
     String email;
 
+    Long resumeId;
 }

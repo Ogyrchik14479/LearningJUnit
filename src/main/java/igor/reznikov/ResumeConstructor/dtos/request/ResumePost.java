@@ -17,6 +17,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ResumePost {
 
+    Long id;
+
     BasicInformationPost basicInformation;
 
     PersonalInformationPost personalInformation;
