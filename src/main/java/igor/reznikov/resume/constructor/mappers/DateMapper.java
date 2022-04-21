@@ -3,7 +3,9 @@ package igor.reznikov.resume.constructor.mappers;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DateMapper {
 
     private final String PATTERN = "dd.MM.yyyy";

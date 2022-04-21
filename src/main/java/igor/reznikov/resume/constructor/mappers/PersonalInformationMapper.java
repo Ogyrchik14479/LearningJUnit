@@ -7,12 +7,9 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import org.mapstruct.factory.Mappers;
 
-@Mapper(uses = DateMapper.class)
+@Mapper(componentModel = "spring", uses = DateMapper.class)
 public interface PersonalInformationMapper {
-
-    PersonalInformationMapper INSTANCE = Mappers.getMapper(PersonalInformationMapper.class);
 
     @Mappings({
             @Mapping(source = "degreeOfEducationEnum", target = "degreeOfEducation"),

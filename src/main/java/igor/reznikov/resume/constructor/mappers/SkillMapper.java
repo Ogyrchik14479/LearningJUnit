@@ -6,12 +6,9 @@ import igor.reznikov.resume.constructor.entities.Skill;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface SkillMapper {
-
-    SkillMapper INSTANCE = Mappers.getMapper(SkillMapper.class);
 
     @Mapping(source = "skillLevelEnum", target = "skillLevel")
     SkillView toSkillDto(Skill skill);

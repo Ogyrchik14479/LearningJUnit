@@ -6,12 +6,10 @@ import igor.reznikov.resume.constructor.entities.Language;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface LanguageMapper {
 
-    LanguageMapper INSTANCE = Mappers.getMapper(LanguageMapper.class);
 
     @Mapping(source = "languageLevelEnum", target = "languageLevel")
     LanguageView toLanguageDto(Language language);

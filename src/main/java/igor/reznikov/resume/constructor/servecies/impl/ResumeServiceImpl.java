@@ -4,16 +4,18 @@ import igor.reznikov.resume.constructor.dtos.request.ResumePost;
 import igor.reznikov.resume.constructor.dtos.response.ResumeView;
 import igor.reznikov.resume.constructor.entities.Resume;
 import igor.reznikov.resume.constructor.mappers.ResumeMapper;
-import igor.reznikov.resumeconstructor.repositories.ResumeRepository;
+import igor.reznikov.resume.constructor.repositories.ResumeRepository;
 import igor.reznikov.resume.constructor.servecies.ResumeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class ResumeServiceImpl implements ResumeService {
 
-    @Autowired
-    ResumeRepository resumeRepository;
+    private final ResumeRepository resumeRepository;
+
+    private final ResumeMapper resumeMapper;
 
     @Override
     public Long add(ResumePost resumePost) {
@@ -35,7 +37,7 @@ public class ResumeServiceImpl implements ResumeService {
         resumePost.getCustomizableSectionList().forEach(item -> item.setResumeId(resumeId));
         resumePost.getRecommendationList().forEach(item -> item.setResumeId(resumeId));
 
-        Resume resume = ResumeMapper.INSTANCE.toResume(resumePost);
+        Resume resume = resumeMapper.toResume(resumePost);
         return resumeRepository.save(resume).getId();
     }
 
@@ -45,6 +47,6 @@ public class ResumeServiceImpl implements ResumeService {
 
     @Override
     public ResumeView getResumeById(Long id) {
-        return ResumeMapper.INSTANCE.toResumeDTO(resumeRepository.findById(id).get());
+        return resumeMapper.toResumeDTO(resumeRepository.findById(id).get());
     }
 }

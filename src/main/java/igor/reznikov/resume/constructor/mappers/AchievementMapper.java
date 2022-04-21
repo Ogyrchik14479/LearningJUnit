@@ -5,13 +5,9 @@ import igor.reznikov.resume.constructor.dtos.response.AchievementView;
 import igor.reznikov.resume.constructor.entities.Achievement;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-//TODO отрефакторит ьвсе мапперы эти ужасные
-@Mapper
+@Mapper(componentModel = "spring")
 public interface AchievementMapper {
-
-    AchievementMapper INSTANCE = Mappers.getMapper(AchievementMapper.class);
 
     AchievementView toAchievementDto(Achievement achievement);
 

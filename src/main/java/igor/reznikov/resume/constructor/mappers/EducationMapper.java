@@ -6,12 +6,10 @@ import igor.reznikov.resume.constructor.entities.Education;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface EducationMapper {
 
-    EducationMapper INSTANCE = Mappers.getMapper(EducationMapper.class);
 
     @Mapping(source = "formOfEducationEnum", target = "formOfEducation")
     EducationView toEducationDto(Education education);

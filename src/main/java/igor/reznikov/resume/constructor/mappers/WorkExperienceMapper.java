@@ -6,11 +6,9 @@ import igor.reznikov.resume.constructor.entities.WorkExperience;
 import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-@Mapper(uses = DateMapper.class)
+@Mapper(componentModel = "spring", uses = DateMapper.class)
 public interface WorkExperienceMapper {
-    WorkExperienceMapper INSTANCE = Mappers.getMapper(WorkExperienceMapper.class);
 
     WorkExperienceView toWorkExperienceDto(WorkExperience workExperience);
 

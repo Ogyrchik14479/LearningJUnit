@@ -5,12 +5,10 @@ import igor.reznikov.resume.constructor.dtos.response.HobbyView;
 import igor.reznikov.resume.constructor.entities.Hobby;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface HobbyMapper {
 
-    HobbyMapper INSTANCE = Mappers.getMapper(HobbyMapper.class);
 
     HobbyView toHobbyDto(Hobby hobby);
 

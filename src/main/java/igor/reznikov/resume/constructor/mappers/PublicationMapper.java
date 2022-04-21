@@ -5,12 +5,9 @@ import igor.reznikov.resume.constructor.dtos.response.PublicationView;
 import igor.reznikov.resume.constructor.entities.Publication;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface PublicationMapper {
-
-    PublicationMapper INSTANCE = Mappers.getMapper(PublicationMapper.class);
 
     PublicationView toPublicationDto(Publication publication);
 

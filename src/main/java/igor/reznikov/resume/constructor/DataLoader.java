@@ -23,25 +23,25 @@ import igor.reznikov.resume.constructor.enums.MigrationEnum;
 import igor.reznikov.resume.constructor.enums.SkillLevelEnum;
 import igor.reznikov.resume.constructor.enums.WorkScheduleEnum;
 import igor.reznikov.resume.constructor.mappers.DateMapper;
-import igor.reznikov.resumeconstructor.repositories.ResumeRepository;
+import igor.reznikov.resume.constructor.repositories.ResumeRepository;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class DataLoader implements ApplicationRunner {
 
-    @Autowired
-    ResumeRepository resumeRepository;
+    private final ResumeRepository resumeRepository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         DateMapper dateMapper = new DateMapper();
-        if (resumeRepository.findAll().size() == 0){
+        if (resumeRepository.findAll().size() == 0) {
             Resume resume1 = new Resume();
 
             PersonalInformation personalInformation1 = createPersonalInformation("Moscow", "РФ", dateMapper.asDate("12.05.1996"), GenderEnum.MALE, MaritalStatusEnum.NOT_MARRIED, false, MigrationEnum.IMPOSSIBLE, DegreeOfEducationEnum.HIGHER, resume1);
@@ -53,7 +53,7 @@ public class DataLoader implements ApplicationRunner {
 
             Course course1 = createCourse("С нуля до гуру за 5 минут", "Институт бичей", dateMapper.asDate("10.10.2020"), dateMapper.asDate("10.12.2020"), "стань бичом за 5 минут", resume1);
             Course course2 = createCourse("научить ходить за 80 минут", "Институт бичей", dateMapper.asDate("12.10.2020"), dateMapper.asDate("10.12.2021"), "научить ходить за 80 минут", resume1);
-            Collection<Course>courseList =  Arrays.asList(course1, course2);
+            Collection<Course> courseList = Arrays.asList(course1, course2);
 
             CustomizableSection customizableSection1 = createCustomizableSection("Моя кастомная категория1", "я есть грут", resume1);
             CustomizableSection customizableSection2 = createCustomizableSection("Моя кастомная категория2", "я есть калбаса", resume1);
@@ -71,8 +71,8 @@ public class DataLoader implements ApplicationRunner {
             Language language2 = createLanguage("Русский", LanguageLevelEnum.ADVANCED, resume1);
             Collection<Language> languageList = Arrays.asList(language1, language2);
 
-            Publication publication1 =createPublication("Подкаты к Иринке", "https://stackoverflow.com/", "Научу как подкатывать к любой Иринке на районе", resume1);
-            Publication publication2 =createPublication("О Маринке", "https://stackoverflow.com/", "Маринка наше всё", resume1);
+            Publication publication1 = createPublication("Подкаты к Иринке", "https://stackoverflow.com/", "Научу как подкатывать к любой Иринке на районе", resume1);
+            Publication publication2 = createPublication("О Маринке", "https://stackoverflow.com/", "Маринка наше всё", resume1);
             Collection<Publication> publicationList = Arrays.asList(publication1, publication2);
 
             Recommendation recommendation1 = createRecommendation("Google", "pedro avacado", "+79999999999", "pedro@mail.ru", resume1);
@@ -87,7 +87,7 @@ public class DataLoader implements ApplicationRunner {
             WorkExperience workExperience2 = createWorkExperience("Yandex", "Yandex-developer", dateMapper.asDate("10.12.2020"), dateMapper.asDate("10.02.2021"), "уронил прод", resume1);
             Collection<WorkExperience> workExperienceList = Arrays.asList(workExperience1, workExperience2);
 
-            resume1 = createResume(resume1, basicInformation, personalInformation1, workExperienceList, educationList, courseList, achievementList, publicationList, skillList, languageList, hobbyList, customizableSectionList, recommendationList);
+            createResume(resume1, basicInformation, personalInformation1, workExperienceList, educationList, courseList, achievementList, publicationList, skillList, languageList, hobbyList, customizableSectionList, recommendationList);
 
             resumeRepository.save(resume1);
         }
@@ -227,19 +227,19 @@ public class DataLoader implements ApplicationRunner {
                 .build();
     }
 
-    private Resume createResume(Resume resume,
-                                BasicInformation basicInformation,
-                                PersonalInformation personalInformation,
-                                Collection<WorkExperience> workExperienceList,
-                                Collection<Education> educationList,
-                                Collection<Course> courseList,
-                                Collection<Achievement> achievementList,
-                                Collection<Publication> publicationList,
-                                Collection<Skill> skillList,
-                                Collection<Language> languageList,
-                                Collection<Hobby> hobbyList,
-                                Collection<CustomizableSection> customizableSectionList,
-                                Collection<Recommendation> recommendationList) {
+    private void createResume(Resume resume,
+                              BasicInformation basicInformation,
+                              PersonalInformation personalInformation,
+                              Collection<WorkExperience> workExperienceList,
+                              Collection<Education> educationList,
+                              Collection<Course> courseList,
+                              Collection<Achievement> achievementList,
+                              Collection<Publication> publicationList,
+                              Collection<Skill> skillList,
+                              Collection<Language> languageList,
+                              Collection<Hobby> hobbyList,
+                              Collection<CustomizableSection> customizableSectionList,
+                              Collection<Recommendation> recommendationList) {
 
         resume.setBasicInformation(basicInformation);
         resume.setPersonalInformation(personalInformation);
@@ -253,8 +253,6 @@ public class DataLoader implements ApplicationRunner {
         resume.setHobbyList(hobbyList);
         resume.setCustomizableSectionList(customizableSectionList);
         resume.setRecommendationList(recommendationList);
-
-        return resume;
     }
 
 }

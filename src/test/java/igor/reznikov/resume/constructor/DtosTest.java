@@ -22,16 +22,24 @@ import igor.reznikov.resume.constructor.mappers.DateMapper;
 import igor.reznikov.resume.constructor.mappers.PersonalInformationMapper;
 import igor.reznikov.resume.constructor.mappers.ResumeMapper;
 import igor.reznikov.resume.constructor.mappers.WorkExperienceMapper;
-import igor.reznikov.resumeconstructor.repositories.ResumeRepository;
+import igor.reznikov.resume.constructor.repositories.ResumeRepository;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
+@RequiredArgsConstructor
 class DtosTest {
+
+    private final ResumeMapper resumeMapper;
+    private final BasicInformationMapper basicInformationMapper;
+    private final PersonalInformationMapper personalInformationMapper;
+    private final CourseMapper courseMapper;
+    private final WorkExperienceMapper workExperienceMapper;
+    private final ResumeRepository resumeRepository;
 
     @Test
     void toBasicInformationDtoTest() {
@@ -46,7 +54,7 @@ class DtosTest {
                 .workScheduleEnum(WorkScheduleEnum.FULL_TIME)
                 .build();
 
-        BasicInformationView basicInformationView = BasicInformationMapper.INSTANCE.toBasicInformationDto(basicInformation);
+        BasicInformationView basicInformationView = basicInformationMapper.toBasicInformationDto(basicInformation);
         System.out.println(basicInformationView);
     }
 
@@ -63,7 +71,7 @@ class DtosTest {
                 .workSchedule("FULL_TIME")
                 .build();
 
-        BasicInformation basicInformation = BasicInformationMapper.INSTANCE.toBasicInformation(basicInformationView);
+        BasicInformation basicInformation = basicInformationMapper.toBasicInformation(basicInformationView);
         System.out.println(basicInformation);
     }
 
@@ -80,7 +88,7 @@ class DtosTest {
                 .degreeOfEducation("HIGHER")
                 .build();
 
-        PersonalInformation personalInformation = PersonalInformationMapper.INSTANCE.toPersonalInformation(personalInformationView);
+        PersonalInformation personalInformation = personalInformationMapper.toPersonalInformation(personalInformationView);
         System.out.println("");
     }
 
@@ -97,7 +105,7 @@ class DtosTest {
                 .degreeOfEducationEnum(DegreeOfEducationEnum.AVERAGE)
                 .build();
 
-        PersonalInformationView personalInformationView = PersonalInformationMapper.INSTANCE.toPersonalInformationDto(personalInformation);
+        PersonalInformationView personalInformationView = personalInformationMapper.toPersonalInformationDto(personalInformation);
         System.out.println("");
     }
 
@@ -113,7 +121,7 @@ class DtosTest {
                 .description("A quick way to become a programmer")
                 .build();
 
-        CourseView courseView = CourseMapper.INSTANCE.toCourseDto(course1);
+        CourseView courseView = courseMapper.toCourseDto(course1);
         System.out.println();
     }
 
@@ -142,14 +150,11 @@ class DtosTest {
         workExperienceList.add(workExperience1);
         workExperienceList.add(workExperience2);
 
-        List<WorkExperienceView> workExperienceViewList = WorkExperienceMapper.INSTANCE.toWorkExperienceDtoList(workExperienceList);
+        List<WorkExperienceView> workExperienceViewList = workExperienceMapper.toWorkExperienceDtoList(workExperienceList);
         System.out.println();
 
     }
 
-
-    @Autowired
-    ResumeRepository resumeRepository;
 
     @Test
     void toResumeDto() {
@@ -206,7 +211,7 @@ class DtosTest {
         resume.setBasicInformation(basicInformation);
         resume.setPersonalInformation(personalInformation);
 
-        ResumeView resumeView = ResumeMapper.INSTANCE.toResumeDTO(resume);
+        ResumeView resumeView = resumeMapper.toResumeDTO(resume);
         Resume resume1 = resumeRepository.save(resume);
         System.out.println("");
     }

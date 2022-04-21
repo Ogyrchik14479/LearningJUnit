@@ -5,12 +5,9 @@ import igor.reznikov.resume.constructor.dtos.response.RecommendationView;
 import igor.reznikov.resume.constructor.entities.Recommendation;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface RecommendationMapper {
-
-    RecommendationMapper INSTANCE = Mappers.getMapper(RecommendationMapper.class);
 
     RecommendationView toRecommendationDto(Recommendation recommendation);
 

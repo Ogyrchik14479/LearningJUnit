@@ -5,12 +5,10 @@ import igor.reznikov.resume.constructor.dtos.response.CustomizableSectionView;
 import igor.reznikov.resume.constructor.entities.CustomizableSection;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface CustomizableSectionMapper {
 
-    CustomizableSectionMapper INSTANCE = Mappers.getMapper(CustomizableSectionMapper.class);
 
     CustomizableSectionView toCustomizableSectionDto(CustomizableSection customizableSection);
 
